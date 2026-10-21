@@ -1,0 +1,35 @@
+# Full stack: Nexora CRM + PostgreSQL 17.
+#   docker compose up --build
+# Then open http://localhost:3000 — the database is migrated and seeded on first boot.
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nexora
+      POSTGRES_PASSWORD: nexora
+      POSTGRES_DB: nexora
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nexora"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://nexora:nexora@db:5432/nexora
+      AUTH_SECRET: ${AUTH_SECRET:-please-change-this-secret-in-production-0123456789}
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+      DEMO_MODE: "true"
+
+volumes:
+  pgdata:
