@@ -6,7 +6,7 @@
 
 **A full-featured, bilingual (English / العربية) sales CRM** — leads, contacts, companies, a drag-and-drop pipeline, activities, reports, role-based access and an audit trail, built with Next.js, TypeScript and PostgreSQL.
 
-[![CI](https://github.com/Mohamed-Mohsen2003/mohamedcrm/actions/workflows/ci.yml/badge.svg)](https://github.com/Mohamed-Mohsen2003/mohamedcrm/actions/workflows/ci.yml)
+[![CI](https://github.com/Mohamed-Mohsen2003/Mohamedcrm/actions/workflows/ci.yml/badge.svg)](https://github.com/Mohamed-Mohsen2003/Mohamedcrm/actions/workflows/ci.yml)
 ![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=nextdotjs)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Drizzle-4169e1?logo=postgresql&logoColor=white)
@@ -21,8 +21,8 @@
 ## Try it in 30 seconds
 
 ```bash
-git clone https://github.com/Mohamed-Mohsen2003/mohamedcrm.git
-cd mohamedcrm
+git clone https://github.com/Mohamed-Mohsen2003/Mohamedcrm.git
+cd Mohamedcrm
 npm install
 npm run dev
 ```
